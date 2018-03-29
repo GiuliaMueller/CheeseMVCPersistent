@@ -8,7 +8,18 @@ namespace CheeseMVC.ViewModels
 {
     public class ViewMenuViewModel
     {
-        public string Menu { get; set; }
-        IList<CheeseMenu> Items { get; set; }
+        public Menu Menu { get; set; }
+        public IList<CheeseMenu> Items { get; set; }
+
+        public ViewMenuViewModel() //default constructor needed to make madel binding work in the EF
+        {
+
+        }
+
+        public ViewMenuViewModel( Menu theMenu, IList<CheeseMenu> item)
+        {
+            Menu = theMenu;
+            Items = item;
+        }
     }
 }
